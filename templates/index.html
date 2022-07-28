@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="{{ url_for('generate') }}" method="post">
+    <div>
+      <label for="lower">Enter the number of lowercase alphabet:</label>
+      <input type="number" name="lower" id="lower" min="2" max="8" required>
+    </div>
+
+    <div>
+        <label for="upper">Enter the number of uppercase alphabet:</label>
+          <input type="number" name="upper"  id="upper" min= "2" max="8" required>
+    </div>
+
+    <div>
+        <label for="numeric">Enter the number of figures:</label>
+        <input type="number" name="numeric"  id="numeric" min= "2" max="8" required>
+    </div>
+    
+    <div>
+        <label for="symbols">Enter the number of symbols:</label>
+        <input type="number" name="symbols" id="symbols" min= "2" max="8" required>
+    </div>
+    
+    <div>
+        <button type="submit">Generate</button>
+    </div>
+  </form>
+<p>Your generated password is {{ generated_password }} </p>
+{% endblock content %}
+
+
+</html>
